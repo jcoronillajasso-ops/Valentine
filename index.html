@@ -1,114 +1,44 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Te amo chaparrita ❤️</title>
+    <title>¿Quieres ser mi Valentine?</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
         body {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #ff1744 0%, #ff6e9d 50%, #ff1744 100%);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
-            font-family: 'Arial', sans-serif;
-            overflow: hidden;
-        }
-        
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
-        .container {
-            text-align: center;
-            position: relative;
-            z-index: 10;
-        }
-        
-        .hearts {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            overflow: hidden;
-        }
-        
-        .heart {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23ff1744" d="M50,90 C20,70 5,55 5,40 C5,25 15,15 25,15 C35,15 45,25 50,35 C55,25 65,15 75,15 C85,15 95,25 95,40 C95,55 80,70 50,90 Z"/></svg>') no-repeat center;
-            background-size: contain;
-            animation: fall linear forwards;
-        }
-        
-        @keyframes fall {
-            to {
-                transform: translateY(100vh) rotate(360deg);
-                opacity: 0;
-            }
-        }
-        
-        h1 {
-            font-size: 4em;
+            background-color: pink;
+            background-image: url('path/to/flower-pattern.png'); /* Replace with actual path to flower theme image */
+            background-size: cover;
             color: white;
-            text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            font-weight: bold;
-            letter-spacing: 2px;
-            animation: pulse 1.5s ease-in-out infinite;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
         }
-        
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-        
-        .decoration {
+        h1 {
             font-size: 3em;
-            margin: 20px 0;
-            animation: bounce 2s ease-in-out infinite;
         }
-        
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .image-container img {
+            margin: 10px;
+            border-radius: 15px;
+            width: 30%;
+            height: auto;
         }
     </style>
 </head>
 <body>
-    <div class="hearts" id="hearts"></div>
-    
-    <div class="container">
-        <div class="decoration">💕</div>
-        <h1>Te amo chaparrita</h1>
-        <div class="decoration">💕</div>
+    <h1>¿Quieres ser mi Valentine?</h1>
+    <p>El amor es como una flor: puede florecer en cualquier lugar y en cualquier momento. Esta es una celebración del amor y la amistad. ¡Que tengas un hermoso Día de San Valentín!</p>
+    <div class="image-container">
+        <img src="images/image1.jpg" alt="" />
+        <img src="images/image2.jpg" alt="" />
+        <img src="images/image3.jpg" alt="" />
+        <img src="images/image4.jpg" alt="" />
+        <img src="images/image5.jpg" alt="" />
+        <img src="images/image6.jpg" alt="" />
     </div>
-    
-    <script>
-        // Crear corazones que caen
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.className = 'heart';
-            heart.style.left = Math.random() * 100 + '%';
-            heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
-            document.getElementById('hearts').appendChild(heart);
-            
-            setTimeout(() => heart.remove(), 7000);
-        }
-        
-        setInterval(createHeart, 300);
-    </script>
 </body>
 </html>
